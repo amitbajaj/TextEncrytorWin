@@ -26,7 +26,7 @@ namespace Encryption
             Encryptor enc = new Encryptor();
             try
             {
-                String encryptedText = Convert.ToBase64String(enc.EncryptStringToBytes_AesIV(txtSource.Text, System.Text.Encoding.UTF8.GetBytes(txtKey.Text)));
+                String encryptedText = Convert.ToBase64String(enc.EncryptStringToBytes_AesIV(txtSource.Text, txtKey.Text));
                 txtSource.Text = encryptedText;
             }
             catch (Exception ex)
@@ -41,7 +41,7 @@ namespace Encryption
             Encryptor enc = new Encryptor();
             try
             {
-                String encryptedText = enc.DecryptStringFromBytes_AesIV(Convert.FromBase64String(txtSource.Text), System.Text.Encoding.UTF8.GetBytes(txtKey.Text));
+                String encryptedText = enc.DecryptStringFromBytes_AesIV(txtSource.Text, txtKey.Text);
                 txtSource.Text = encryptedText;
             }
             catch (Exception ex)
@@ -53,7 +53,6 @@ namespace Encryption
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

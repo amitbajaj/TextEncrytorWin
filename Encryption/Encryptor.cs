@@ -11,7 +11,7 @@ namespace Encryption
     class Encryptor
     {
         private static int KEYLENGTH = 16;
-        public byte[] EncryptStringToBytes_AesIV(string plainText, byte[] Key)
+        public byte[] EncryptStringToBytes_AesIV(String plainText, String Key)
         {
             // Check arguments.
             if (plainText == null || plainText.Length <= 0)
@@ -26,8 +26,16 @@ namespace Encryption
             using (Aes aesAlg = Aes.Create())
             {
                 key2use = new byte[KEYLENGTH];
+                StringBuilder Sb = new StringBuilder();
                 SHA256Managed sha256 = new SHA256Managed();
-                Buffer.BlockCopy(sha256.ComputeHash(Key), 0, key2use, 0, KEYLENGTH);
+                Encoding enc = Encoding.UTF8;
+                byte[] hash = sha256.ComputeHash(enc.GetBytes(Key));
+                for (int i = 0; i < KEYLENGTH/2; i++)
+                {
+                    Sb.Append(hash[i].ToString("x2"));
+                }
+                System.Console.Out.WriteLine(Sb.Length);
+                Buffer.BlockCopy(enc.GetBytes(Sb.ToString()), 0, key2use , 0, KEYLENGTH);
                 aesAlg.Key = key2use;
                 aesAlg.Mode = CipherMode.CBC;
                 aesAlg.Padding = PaddingMode.PKCS7;
@@ -56,7 +64,7 @@ namespace Encryption
             return encrypted;
         }
 
-        public string DecryptStringFromBytes_AesIV(byte[] cipherText, byte[] Key)
+        public string DecryptStringFromBytes_AesIV(String cipherText, String Key)
         {
             // Check arguments.
             if (cipherText == null || cipherText.Length <= 0)
@@ -66,21 +74,29 @@ namespace Encryption
 
             // Declare the string used to hold
             // the decrypted text.
-            string plaintext = null;
+            String plaintext = null;
+            byte[] cipherBytes = Convert.FromBase64String(cipherText);
             byte[] iv = new byte[16];
-            byte[] staged = new byte[cipherText.Length-16];
+            byte[] staged = new byte[cipherBytes.Length-16];
             byte[] key2use;
-            String prefix;
             // Create an Aes object
             // with the specified key and IV.
             using (Aes aesAlg = Aes.Create())
             {
                 key2use = new byte[KEYLENGTH];
+                StringBuilder Sb = new StringBuilder();
                 SHA256Managed sha256 = new SHA256Managed();
-                Buffer.BlockCopy(sha256.ComputeHash(Key), 0, key2use, 0, KEYLENGTH);
+                Encoding enc = Encoding.UTF8;
+                byte[] hash = sha256.ComputeHash(enc.GetBytes(Key));
+                for (int i = 0; i < KEYLENGTH / 2; i++)
+                {
+                    Sb.Append(hash[i].ToString("x2"));
+                }
+                System.Console.Out.WriteLine(Sb.Length);
+                Buffer.BlockCopy(enc.GetBytes(Sb.ToString()), 0, key2use, 0, KEYLENGTH);
                 aesAlg.Key = key2use;
-                Buffer.BlockCopy(cipherText, 0, iv, 0, 16);
-                Buffer.BlockCopy(cipherText, 16, staged, 0, cipherText.Length - 16);
+                Buffer.BlockCopy(cipherBytes, 0, iv, 0, 16);
+                Buffer.BlockCopy(cipherBytes, 16, staged, 0, cipherBytes.Length - 16);
                 aesAlg.IV = iv;
                 aesAlg.Mode = CipherMode.CBC;
                 aesAlg.Padding = PaddingMode.PKCS7;
