@@ -1,0 +1,8 @@
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\bin\Debug\Encryption.exe.config
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\bin\Debug\Encryption.exe
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\bin\Debug\Encryption.pdb
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Debug\Encryption.frmMain.resources
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Debug\Encryption.Properties.Resources.resources
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Debug\Encryption.csproj.GenerateResource.Cache
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Debug\Encryption.exe
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Debug\Encryption.pdb
