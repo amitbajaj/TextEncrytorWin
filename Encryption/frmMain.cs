@@ -12,12 +12,12 @@ namespace Encryption
 {
     public partial class frmMain : Form
     {
-        byte[] iv = System.Text.Encoding.UTF8.GetBytes("R@nd0m 1n173cT02");
+        //byte[] iv = System.Text.Encoding.UTF8.GetBytes("R@nd0m 1n173cT02");
 
         public frmMain()
         {
             InitializeComponent();
-            txtKey.Text = "This is my key01";
+            //txtKey.Text = "This is my key01";
         }
 
         private void btnEncrypt_Click(object sender, EventArgs e)
@@ -53,6 +53,22 @@ namespace Encryption
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+        }
+
+        private void btnReadFromGoogle_Click(object sender, EventArgs e)
+        {
+            GoogleDriveHelper gh = new GoogleDriveHelper();
+            if (gh.LoginToGoogle())
+            {
+                if (gh.CreateService())
+                {
+                    if (gh.ReadFile("TextEncryptor"))
+                    {
+                        txtSource.Text = gh.fileData;
+                        MessageBox.Show("File read....");
+                    }
+                }
+            }
         }
     }
 }

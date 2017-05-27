@@ -1,0 +1,9 @@
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\bin\Release\Encryption.exe.config
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\bin\Release\Encryption.exe
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\bin\Release\Encryption.pdb
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Release\Encryption.csprojResolveAssemblyReference.cache
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Release\Encryption.frmMain.resources
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Release\Encryption.Properties.Resources.resources
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Release\Encryption.csproj.GenerateResource.Cache
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Release\Encryption.exe
+C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Release\Encryption.pdb

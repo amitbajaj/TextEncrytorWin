@@ -32,6 +32,8 @@
             this.txtKey = new System.Windows.Forms.TextBox();
             this.btnEncrypt = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
+            this.btnReadFromGoogle = new System.Windows.Forms.Button();
+            this.btnWriteToGoogle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtSource
@@ -56,7 +58,7 @@
             // 
             this.btnEncrypt.Location = new System.Drawing.Point(13, 268);
             this.btnEncrypt.Name = "btnEncrypt";
-            this.btnEncrypt.Size = new System.Drawing.Size(198, 23);
+            this.btnEncrypt.Size = new System.Drawing.Size(118, 23);
             this.btnEncrypt.TabIndex = 2;
             this.btnEncrypt.Text = "Encrypt";
             this.btnEncrypt.UseVisualStyleBackColor = true;
@@ -64,19 +66,40 @@
             // 
             // btnDecrypt
             // 
-            this.btnDecrypt.Location = new System.Drawing.Point(411, 268);
+            this.btnDecrypt.Location = new System.Drawing.Point(491, 268);
             this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(198, 23);
+            this.btnDecrypt.Size = new System.Drawing.Size(118, 23);
             this.btnDecrypt.TabIndex = 3;
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = true;
             this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
+            // btnReadFromGoogle
+            // 
+            this.btnReadFromGoogle.Location = new System.Drawing.Point(13, 297);
+            this.btnReadFromGoogle.Name = "btnReadFromGoogle";
+            this.btnReadFromGoogle.Size = new System.Drawing.Size(118, 23);
+            this.btnReadFromGoogle.TabIndex = 4;
+            this.btnReadFromGoogle.Text = "Read from Google";
+            this.btnReadFromGoogle.UseVisualStyleBackColor = true;
+            this.btnReadFromGoogle.Click += new System.EventHandler(this.btnReadFromGoogle_Click);
+            // 
+            // btnWriteToGoogle
+            // 
+            this.btnWriteToGoogle.Location = new System.Drawing.Point(491, 297);
+            this.btnWriteToGoogle.Name = "btnWriteToGoogle";
+            this.btnWriteToGoogle.Size = new System.Drawing.Size(118, 23);
+            this.btnWriteToGoogle.TabIndex = 5;
+            this.btnWriteToGoogle.Text = "Write to Google";
+            this.btnWriteToGoogle.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 301);
+            this.ClientSize = new System.Drawing.Size(619, 325);
+            this.Controls.Add(this.btnWriteToGoogle);
+            this.Controls.Add(this.btnReadFromGoogle);
             this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.btnEncrypt);
             this.Controls.Add(this.txtKey);
@@ -99,6 +122,8 @@
         private System.Windows.Forms.TextBox txtKey;
         private System.Windows.Forms.Button btnEncrypt;
         private System.Windows.Forms.Button btnDecrypt;
+        private System.Windows.Forms.Button btnReadFromGoogle;
+        private System.Windows.Forms.Button btnWriteToGoogle;
     }
 }
 
