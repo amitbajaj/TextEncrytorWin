@@ -116,6 +116,10 @@ namespace Encryption
                     }
                 }
             }
+            for(int i = 15; i < 25; i++)
+            {
+                Console.Out.WriteLine((int)plaintext.ElementAt(i));
+            }
             return updateNewLineCharacters(plaintext);
         }
         private String updateNewLineCharacters(String sourceData)
@@ -124,6 +128,9 @@ namespace Encryption
             {
                 sourceData = sourceData.Replace("\r\n", "\n");
                 sourceData = sourceData.Replace("\n", "\r\n");
+                sourceData = sourceData.Replace("\r\n", "\r");
+                sourceData = sourceData.Replace("\r", "\r\n");
+
             }
             return sourceData;
         }
