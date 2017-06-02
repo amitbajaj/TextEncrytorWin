@@ -92,6 +92,7 @@
             this.btnWriteToGoogle.TabIndex = 5;
             this.btnWriteToGoogle.Text = "Write to Google";
             this.btnWriteToGoogle.UseVisualStyleBackColor = true;
+            this.btnWriteToGoogle.Click += new System.EventHandler(this.btnWriteToGoogle_Click);
             // 
             // frmMain
             // 

@@ -34,16 +34,13 @@ namespace Encryption
                 {
                     Sb.Append(hash[i].ToString("x2"));
                 }
-                System.Console.Out.WriteLine(Sb.ToString());
                 Buffer.BlockCopy(enc.GetBytes(Sb.ToString()), 0, key2use , 0, KEYLENGTH);
                 aesAlg.Key = key2use;
-                Console.Out.WriteLine(Convert.ToBase64String(key2use).Length);
                 aesAlg.Mode = CipherMode.CBC;
                 aesAlg.Padding = PaddingMode.PKCS7;
 
                 // Create a decrytor to perform the stream transform.
                 ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
-                Console.Out.WriteLine(Convert.ToBase64String(aesAlg.IV));
                 // Create the streams used for encryption.
                 using (MemoryStream msEncrypt = new MemoryStream())
                 {
@@ -93,14 +90,11 @@ namespace Encryption
                 {
                     Sb.Append(hash[i].ToString("x2"));
                 }
-                System.Console.Out.WriteLine(Sb.ToString());
                 Buffer.BlockCopy(enc.GetBytes(Sb.ToString()), 0, key2use, 0, KEYLENGTH);
                 aesAlg.Key = key2use;
-                Console.Out.WriteLine(Convert.ToBase64String(key2use));
                 Buffer.BlockCopy(cipherBytes, 0, iv, 0, 16);
                 Buffer.BlockCopy(cipherBytes, 16, staged, 0, cipherBytes.Length - 16);
                 aesAlg.IV = iv;
-                Console.Out.WriteLine(Convert.ToBase64String(iv));
                 aesAlg.Mode = CipherMode.CBC;
                 aesAlg.Padding = PaddingMode.PKCS7;
 
@@ -117,11 +111,21 @@ namespace Encryption
                             // Read the decrypted bytes from the decrypting stream
                             // and place them in a string.
                             plaintext = srDecrypt.ReadToEnd();
+
                         }
                     }
                 }
             }
-            return plaintext;
+            return updateNewLineCharacters(plaintext);
+        }
+        private String updateNewLineCharacters(String sourceData)
+        {
+            if (sourceData != null)
+            {
+                sourceData = sourceData.Replace("\r\n", "\n");
+                sourceData = sourceData.Replace("\n", "\r\n");
+            }
+            return sourceData;
         }
     }
 }

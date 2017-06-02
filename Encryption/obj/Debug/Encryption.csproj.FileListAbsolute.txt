@@ -7,7 +7,6 @@ C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encrypt
 C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Debug\Encryption.exe
 C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Debug\Encryption.pdb
 C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\obj\Debug\Encryption.csprojResolveAssemblyReference.cache
-C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\bin\Debug\client_secret.json
 C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\bin\Debug\Google.Apis.Auth.dll
 C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\bin\Debug\Google.Apis.Auth.PlatformServices.dll
 C:\Users\Priyanka\Documents\Visual Studio 2017\Projects\TextEncryptorWin\Encryption\bin\Debug\Google.Apis.Core.dll

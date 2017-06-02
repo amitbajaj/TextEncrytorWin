@@ -67,7 +67,46 @@ namespace Encryption
                         txtSource.Text = gh.fileData;
                         MessageBox.Show("File read....");
                     }
+                    else
+                    {
+                        MessageBox.Show("Error reading file from Google Drive!");
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Error creating Google Drive Service!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error connecting to Google!");
+            }
+        }
+
+        private void btnWriteToGoogle_Click(object sender, EventArgs e)
+        {
+            GoogleDriveHelper gh = new GoogleDriveHelper();
+            if (gh.LoginToGoogle())
+            {
+                if (gh.CreateService())
+                {
+                    if (gh.WriteFile("TextEncryptor", txtSource.Text))
+                    {
+                        MessageBox.Show("File write....");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to write file to Google Drive!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Unable to create Google Drive Service!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Unable to Login to Google!");
             }
         }
     }
